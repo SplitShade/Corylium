@@ -1,24 +1,8 @@
-module Application;
+module EntryPoint;
 
 namespace Corylium {
 
-
-	Application::Application()
-	{
-
-	}
-
-	Application::~Application()
-	{
-
-	}
-
-	void Application::Run()
-	{
-		while (true);
-	}
-
-	/*std::function<Application* ()> CreateApplicationCallback = nullptr;
+	std::function<Application* ()> CreateApplicationCallback = nullptr;
 
 	void SetApplicationInitFunction(std::function<Application* ()> CreateApplication) {
 		CreateApplicationCallback = CreateApplication;
@@ -36,6 +20,10 @@ namespace Corylium {
 		std::cout << "Entry Point from Engine!" << std::endl;
 		app->Run();
 		delete app;
-	}*/
+	}
 
+	/*void fun()
+	{
+		std::cout << "fun!" << std::endl;
+	}*/
 }

@@ -2,6 +2,9 @@ export module Application;
 
 #include "Core.h"
 
+//import <functional>;
+//import <iostream>;
+
 namespace Corylium {
 
 	export class CORYLIUM_API Application
@@ -13,10 +16,8 @@ namespace Corylium {
 		void Run();
 	};
 
-	/// <summary>
-	/// Creates Application, is defined in CLIENT
-	/// </summary>
-	/// <returns>Application*</returns>
-	export Application* CreateApplication();
+	/*export void CORYLIUM_API SetApplicationInitFunction(std::function<Application* ()> CreateApplication);
+
+	export void CORYLIUM_API Initialize();*/
 
 }

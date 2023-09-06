@@ -1,7 +1,6 @@
 
 import Corylium;
-#include "Core.h"
-#include "EntryPoint.h"
+
 
 class Sandbox : public Corylium::Application {
 public:
@@ -16,7 +15,15 @@ public:
 	}
 };
 
-Corylium::Application* Corylium::CreateApplication()
+Corylium::Application* CreateApplication()
 {
 	return new Sandbox();
+}
+
+int main(int argc, char** argv) {
+	Corylium::SetApplicationInitFunction(CreateApplication);
+	Corylium::Initialize();
+	//a::fun();
+	
+	
 }

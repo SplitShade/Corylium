@@ -103,9 +103,8 @@
       </ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="src\Corylium.ixx" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\Corylium\EntryPoint.h" />
+    <ClCompile Include="src\Corylium\EntryPoint.cpp" />
+    <ClCompile Include="src\Corylium\EntryPoint.ixx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
