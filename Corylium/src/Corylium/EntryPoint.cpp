@@ -1,4 +1,6 @@
 module EntryPoint;
+import Application;
+import std;
 
 namespace Corylium {
 
@@ -21,9 +23,4 @@ namespace Corylium {
 		app->Run();
 		delete app;
 	}
-
-	/*void fun()
-	{
-		std::cout << "fun!" << std::endl;
-	}*/
 }

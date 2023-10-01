@@ -1,0 +1,3 @@
+[submodule "Corylium/3rdparties/spdlog"]
+	path = Corylium/3rdparties/spdlog
+	url = https://github.com/gabime/spdlog

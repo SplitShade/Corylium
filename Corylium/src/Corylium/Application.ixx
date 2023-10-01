@@ -1,12 +1,13 @@
+module;
+#include "Core.hpp"
+
 export module Application;
-
-#include "Core.h"
-
-//import <functional>;
-//import <iostream>;
 
 namespace Corylium {
 
+	/// <summary>
+	/// Application class which is meant to be inherited by an app that uses the Corylium API
+	/// </summary>
 	export class CORYLIUM_API Application
 	{
 	public:
@@ -15,9 +16,5 @@ namespace Corylium {
 
 		void Run();
 	};
-
-	/*export void CORYLIUM_API SetApplicationInitFunction(std::function<Application* ()> CreateApplication);
-
-	export void CORYLIUM_API Initialize();*/
 
 }

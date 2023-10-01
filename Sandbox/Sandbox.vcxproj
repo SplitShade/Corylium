@@ -67,11 +67,17 @@
       <AdditionalModuleDependencies>E:\dev\Corylium\src\;%(AdditionalModuleDependencies)</AdditionalModuleDependencies>
       <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
       <EnableModules>true</EnableModules>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Corylium\3rdparties\spdlog\include;</AdditionalIncludeDirectories>
+      <BuildStlModules>true</BuildStlModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)bin\Debug-x64\Corylium\Corylium.dll" "$(TargetDir)" /Y
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -85,6 +91,8 @@
       <AdditionalModuleDependencies>E:\dev\Corylium\src\;%(AdditionalModuleDependencies)</AdditionalModuleDependencies>
       <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
       <EnableModules>true</EnableModules>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Corylium\3rdparties\spdlog\include;</AdditionalIncludeDirectories>
+      <BuildStlModules>true</BuildStlModules>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -92,6 +100,10 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)bin\Debug-x64\Corylium\Corylium.dll" "$(TargetDir)" /Y
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\SandboxApp.cpp" />

@@ -1,5 +1,6 @@
 
 import Corylium;
+import std;
 
 
 class Sandbox : public Corylium::Application {
@@ -22,8 +23,5 @@ Corylium::Application* CreateApplication()
 
 int main(int argc, char** argv) {
 	Corylium::SetApplicationInitFunction(CreateApplication);
-	Corylium::Initialize();
-	//a::fun();
-	
-	
+	Corylium::Initialize();	
 }

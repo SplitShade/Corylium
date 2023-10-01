@@ -24,13 +24,19 @@
     <ClCompile Include="src\Corylium.ixx">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Corylium\Core.h">
+    <ClCompile Include="src\Corylium\Core.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Corylium\EntryPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Corylium\EntryPoint.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Corylium\Log.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Corylium\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
