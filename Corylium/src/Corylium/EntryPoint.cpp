@@ -1,6 +1,5 @@
 module EntryPoint;
 import Application;
-import std;
 
 namespace Corylium {
 

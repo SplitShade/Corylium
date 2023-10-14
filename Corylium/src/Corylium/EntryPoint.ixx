@@ -2,7 +2,8 @@ module;
 #include "Core.hpp"
 export module EntryPoint;
 import Application;
-import std;
+import <functional>;
+import <iostream>;
 
 
 namespace Corylium {

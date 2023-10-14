@@ -1,6 +1,5 @@
 
 import Corylium;
-import std;
 
 
 class Sandbox : public Corylium::Application {
