@@ -1,5 +1,6 @@
-module EntryPoint;
-import Application;
+#include "EntryPoint.h"
+#include "Log.h"
+#include <iostream>
 
 namespace Corylium {
 
@@ -11,11 +12,16 @@ namespace Corylium {
 
 	void Initialize()
 	{
+		Log::Initialize();
+		Log::CoreError("This is %s%s%s%d error", "o", "n", "e", 1);
+		Log::CoreError();
 		Application* app = nullptr;
-		if (CreateApplicationCallback != nullptr) {
+		if (CreateApplicationCallback != nullptr)
+		{
 			app = CreateApplicationCallback();
 		}
-		else {
+		else
+		{
 			return;
 		}
 		std::cout << "Entry Point from Engine!" << std::endl;

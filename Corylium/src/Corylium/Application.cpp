@@ -1,4 +1,4 @@
-module Application;
+#include "Application.h"
 
 namespace Corylium {
 

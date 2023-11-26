@@ -1,15 +1,23 @@
-module;
-#include "Core.hpp"
+#pragma once
+
+#include "Core.h"
 #include "spdlog/spdlog.h"
-export module Log;
 
 namespace Corylium {
 
-	export class CORYLIUM_API Log
+	class CORYLIUM_API Log
 	{
 	public:
 		static constexpr std::shared_ptr<spdlog::logger>& GetCoreLogger() { return sCoreLogger; }
 		static constexpr std::shared_ptr<spdlog::logger>& GetClientLogger() { return sClientLogger; }
+
+		static void Initialize();
+
+		template<typename ...Args>
+		static void CoreError(Args ...args)
+		{
+			return;
+		}
 
 		Log() = delete;
 		Log(const Log&) = delete;
@@ -22,6 +30,5 @@ namespace Corylium {
 		static std::shared_ptr<spdlog::logger> sCoreLogger;
 		static std::shared_ptr<spdlog::logger> sClientLogger;
 	};
-
 
 }

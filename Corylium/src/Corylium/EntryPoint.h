@@ -1,9 +1,7 @@
-module;
-#include "Core.hpp"
-export module EntryPoint;
-import Application;
-import <functional>;
-import <iostream>;
+#pragma once
+#include "Core.h"
+#include "Application.h"
+#include <functional>
 
 
 namespace Corylium {
@@ -22,12 +20,12 @@ namespace Corylium {
 	/// </summary>
 	/// <param name="CreateApplication"></param>
 	/// <returns></returns>
-	export void CORYLIUM_API SetApplicationInitFunction(std::function<Application* ()> CreateApplication);
+	void CORYLIUM_API SetApplicationInitFunction(std::function<Application* ()> CreateApplication);
 
 	/// <summary>
 	/// The entrypoint of a Corylium application, defined by the Corylium API
 	/// </summary>
 	/// <returns></returns>
-	export void CORYLIUM_API Initialize();
+	void CORYLIUM_API Initialize();
 
 }

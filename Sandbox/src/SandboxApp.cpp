@@ -1,6 +1,4 @@
-
-import Corylium;
-
+#include "Corylium.h"
 
 class Sandbox : public Corylium::Application {
 public:

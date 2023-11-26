@@ -47,29 +47,26 @@
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
     <PublicModuleDirectories>$(PublicModuleDirectories)</PublicModuleDirectories>
-    <AllProjectIncludesArePublic>true</AllProjectIncludesArePublic>
-    <AllProjectBMIsArePublic>true</AllProjectBMIsArePublic>
-    <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
+    <PublicIncludeDirectories>$(SolutionDir)Corylium\src;$(PublicIncludeDirectories)</PublicIncludeDirectories>
+    <AllProjectIncludesArePublic>false</AllProjectIncludesArePublic>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
     <PublicModuleDirectories>$(PublicModuleDirectories)</PublicModuleDirectories>
-    <AllProjectIncludesArePublic>true</AllProjectIncludesArePublic>
-    <AllProjectBMIsArePublic>true</AllProjectBMIsArePublic>
-    <PublicIncludeDirectories>$(PublicIncludeDirectories)</PublicIncludeDirectories>
+    <PublicIncludeDirectories>$(SolutionDir)Corylium\src;$(PublicIncludeDirectories)</PublicIncludeDirectories>
+    <AllProjectIncludesArePublic>false</AllProjectIncludesArePublic>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CRLY_PLATFORM_WINDOWS;CRLY_BUILD_DLL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CRLY_PLATFORM_WINDOWS;CRLY_BUILD_DLL;_SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <EnableModules>true</EnableModules>
-      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Corylium\3rdparties\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <BuildStlModules>true</BuildStlModules>
+      <EnableModules>false</EnableModules>
+      <AdditionalIncludeDirectories>$(SolutionDir)Corylium\3rdparties\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BuildStlModules>false</BuildStlModules>
       <DisableSpecificWarnings>%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -87,13 +84,12 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>CRLY_PLATFORM_WINDOWS;CRLY_BUILD_DLL</PreprocessorDefinitions>
+      <PreprocessorDefinitions>CRLY_PLATFORM_WINDOWS;CRLY_BUILD_DLL;_SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpplatest</LanguageStandard>
-      <EnableModules>true</EnableModules>
-      <ScanSourceForModuleDependencies>true</ScanSourceForModuleDependencies>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Corylium\3rdparties\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <BuildStlModules>true</BuildStlModules>
+      <EnableModules>false</EnableModules>
+      <AdditionalIncludeDirectories>$(SolutionDir)Corylium\3rdparties\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BuildStlModules>false</BuildStlModules>
       <DisableSpecificWarnings>%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -109,18 +105,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Corylium\Application.cpp" />
-    <ClCompile Include="src\Corylium\Application.ixx" />
-    <ClCompile Include="src\Corylium\Core.hpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-      </ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-      </ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="src\Corylium.ixx" />
     <ClCompile Include="src\Corylium\EntryPoint.cpp" />
-    <ClCompile Include="src\Corylium\EntryPoint.ixx" />
     <ClCompile Include="src\Corylium\Log.cpp" />
-    <ClCompile Include="src\Corylium\Log.ixx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Corylium.h" />
+    <ClInclude Include="src\Corylium\Application.h" />
+    <ClInclude Include="src\Corylium\Core.h" />
+    <ClInclude Include="src\Corylium\EntryPoint.h" />
+    <ClInclude Include="src\Corylium\Log.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
