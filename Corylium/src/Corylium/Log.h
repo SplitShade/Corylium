@@ -2,6 +2,9 @@
 
 #include "Core.h"
 #include "spdlog/spdlog.h"
+#include <utility>
+#include <string>
+#include "spdlog/logger.h"
 
 namespace Corylium {
 
@@ -14,11 +17,17 @@ namespace Corylium {
 		static void Initialize();
 
 		template<typename ...Args>
-		static void CoreError(Args ...args)
+		static void CoreError(spdlog::format_string_t<Args...> fmt, Args&& ...args)
 		{
-			return;
+			sCoreLogger->error(fmt, std::forward<Args>(args)...);
 		}
 
+		template<typename ...Args>
+		static void ClientError(spdlog::format_string_t<Args...> fmt, Args&& ...args)
+		{
+			sClientLogger->error(fmt, std::forward<Args>(args)...);
+		}
+		
 		Log() = delete;
 		Log(const Log&) = delete;
 		Log(Log&&) = delete;

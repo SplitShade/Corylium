@@ -13,8 +13,7 @@ namespace Corylium {
 	void Initialize()
 	{
 		Log::Initialize();
-		Log::CoreError("This is %s%s%s%d error", "o", "n", "e", 1);
-		Log::CoreError();
+		
 		Application* app = nullptr;
 		if (CreateApplicationCallback != nullptr)
 		{
@@ -25,6 +24,9 @@ namespace Corylium {
 			return;
 		}
 		std::cout << "Entry Point from Engine!" << std::endl;
+		Log::CoreError("This is {}{}{} ({}) error", "o", "n", "e", 1);
+		Log::ClientError("This is {}{}{} ({}) error", "t", "w", "o", 2);
+
 		app->Run();
 		delete app;
 	}
