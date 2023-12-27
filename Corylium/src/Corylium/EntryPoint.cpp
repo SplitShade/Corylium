@@ -4,30 +4,23 @@
 
 namespace Corylium {
 
-	std::function<Application* ()> CreateApplicationCallback = nullptr;
-
-	void SetApplicationInitFunction(std::function<Application* ()> CreateApplication) {
-		CreateApplicationCallback = CreateApplication;
+	void CreateApplication(Application& DerivedApplication) {
+		Initialize(DerivedApplication);
 	}
 
-	void Initialize()
+	void Initialize(Application& DerivedApplication)
 	{
-		Log::Initialize();
-		
-		Application* app = nullptr;
-		if (CreateApplicationCallback != nullptr)
-		{
-			app = CreateApplicationCallback();
-		}
-		else
-		{
-			return;
-		}
 		std::cout << "Entry Point from Engine!" << std::endl;
-		Log::CoreError("This is {}{}{} ({}) error", "o", "n", "e", 1);
-		Log::ClientError("This is {}{}{} ({}) error", "t", "w", "o", 2);
+		std::string appName = DerivedApplication.GetName();
+		Log::Initialize(appName);
 
-		app->Run();
-		delete app;
+		if (appName == "APP")
+		{
+			Log::CoreInfo("No application name provided when initializing engine. Using default");
+		}
+
+		Log::CoreError("This is {}{}{} ({}) error", "o", "n", "e", 1);
+
+		//DerivedApplication.Run();
 	}
 }

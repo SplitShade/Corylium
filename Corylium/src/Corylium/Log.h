@@ -8,26 +8,26 @@
 
 namespace Corylium {
 
-	class CORYLIUM_API Log
+	class Log
 	{
 	public:
-		static constexpr std::shared_ptr<spdlog::logger>& GetCoreLogger() { return sCoreLogger; }
-		static constexpr std::shared_ptr<spdlog::logger>& GetClientLogger() { return sClientLogger; }
+		[[nodiscard]] static constexpr std::shared_ptr<spdlog::logger>& GetCoreLogger() { return sCoreLogger; }
+		[[nodiscard]] CORYLIUM_API static constexpr std::shared_ptr<spdlog::logger>& GetClientLogger() { return sClientLogger; }
 
-		static void Initialize();
-
-		template<typename ...Args>
-		static void CoreError(spdlog::format_string_t<Args...> fmt, Args&& ...args)
-		{
-			sCoreLogger->error(fmt, std::forward<Args>(args)...);
-		}
+		static void Initialize(const std::string AppName);
 
 		template<typename ...Args>
-		static void ClientError(spdlog::format_string_t<Args...> fmt, Args&& ...args)
-		{
-			sClientLogger->error(fmt, std::forward<Args>(args)...);
-		}
-		
+		static void CoreError(spdlog::format_string_t<Args...> fmt, Args&& ...args);
+
+		template<typename ...Args>
+		static void Error(spdlog::format_string_t<Args...> fmt, Args&& ...args);
+
+		template<typename ...Args>
+		static void CoreInfo(spdlog::format_string_t<Args...> fmt, Args&& ...args);
+
+		template<typename ...Args>
+		static void Info(spdlog::format_string_t<Args...> fmt, Args&& ...args);
+
 		Log() = delete;
 		Log(const Log&) = delete;
 		Log(Log&&) = delete;
@@ -41,3 +41,5 @@ namespace Corylium {
 	};
 
 }
+
+#include "Log_impl.h"

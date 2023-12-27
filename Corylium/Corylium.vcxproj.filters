@@ -41,5 +41,8 @@
     <ClInclude Include="src\Corylium.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Corylium\Log_impl.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

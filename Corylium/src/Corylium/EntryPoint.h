@@ -1,31 +1,19 @@
 #pragma once
+
 #include "Core.h"
 #include "Application.h"
 #include <functional>
-
+#include <string>
+#include <optional>
 
 namespace Corylium {
 
 	/// <summary>
-	/// Used to pass a function that creates an app dervied from a Corylium::Application, for example:
-	/// <code>
-	/// class DerviedApplication : public Corylium::Application {
-	/// }
-	/// 
-	/// Corylium::Application* CreateApplication()
-	/// {
-	/// 	return new DerivedApplication();
-	/// }
-	/// </code>
+	/// Used to pass a unique_ptr to an object dervied from a Corylium::Application
 	/// </summary>
-	/// <param name="CreateApplication"></param>
+	/// <param name="DerivedApplication"></param>
 	/// <returns></returns>
-	void CORYLIUM_API SetApplicationInitFunction(std::function<Application* ()> CreateApplication);
+	void CORYLIUM_API CreateApplication(Application& DerivedApplication);
 
-	/// <summary>
-	/// The entrypoint of a Corylium application, defined by the Corylium API
-	/// </summary>
-	/// <returns></returns>
-	void CORYLIUM_API Initialize();
-
+	void Initialize(Application& DerivedApplication);
 }
