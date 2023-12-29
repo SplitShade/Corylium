@@ -1,2 +1,2 @@
 # Corylium
-Corylium Engine
+Corylium Game Engine
