@@ -37,7 +37,8 @@ project "Corylium"
 		defines
 		{
 			"CRLY_PLATFORM_WINDOWS",
-			"CRLY_BUILD_DLL"
+			"CRLY_BUILD_DLL",
+			"_SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING"
 		}
 		
 		postbuildcommands
@@ -90,6 +91,7 @@ project "Sandbox"
 		defines
 		{
 			"CRLY_PLATFORM_WINDOWS",
+			"_SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING"
 		}
 		
     filter "configurations:Debug"
