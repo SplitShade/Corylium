@@ -1,5 +1,9 @@
 #pragma once
 
+#include <string>
+#include <functional>
+#include <optional>
+
 #ifdef CRLY_PLATFORM_WINDOWS
 	#ifdef CRLY_BUILD_DLL
 		#define CORYLIUM_API __declspec(dllexport)
@@ -10,3 +14,6 @@
 	#error Corylium only supports Windows!
 #endif 
 
+constexpr int Bit(int shift) {
+	return (1 << shift);
+}

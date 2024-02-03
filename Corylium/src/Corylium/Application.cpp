@@ -20,8 +20,4 @@ namespace Corylium {
 		while (true);
 	}
 
-	std::string Application::GetName() const
-	{
-		return _name;
-	}
 }

@@ -2,9 +2,6 @@
 
 #include "Core.h"
 #include "Application.h"
-#include <functional>
-#include <string>
-#include <optional>
 
 namespace Corylium {
 

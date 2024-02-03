@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Core.h"
-#include <string>
 
 namespace Corylium {
 
@@ -17,8 +16,9 @@ namespace Corylium {
 
 		CORYLIUM_API void Run();
 
-		CORYLIUM_API std::string GetName() const;
+		CORYLIUM_API std::string GetName() const { return _name; }
 
+		
 	private:
 		std::string _name = "CLIENT_APP";
 	};

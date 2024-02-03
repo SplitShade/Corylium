@@ -8,6 +8,8 @@ workspace "Corylium"
 		"Dist"
 	}
 	
+	includedirs { "Corylium/src" }
+	
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "Corylium"
