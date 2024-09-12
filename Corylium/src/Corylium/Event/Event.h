@@ -33,7 +33,11 @@ namespace Corylium {
 		[[nodiscard]] virtual std::string_view GetName() const = 0;
 		[[nodiscard]] virtual int GetCategoryFlags() const = 0;
 
+		/// @brief Checks if an Event is in the specified category
+		/// @param category 
+		/// @return true or false
 		bool IsInCategory(EventCategory category) const { return GetCategoryFlags() & category; }
+		bool IsHandled() const { return _isHandled; }
 
 	private:
 		bool _isHandled = false;

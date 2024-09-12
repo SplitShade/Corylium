@@ -4,9 +4,7 @@
 
 namespace Corylium {
 
-	/// <summary>
-	/// Application class which is meant to be inherited by an app that uses the Corylium API
-	/// </summary>
+	/// @brief Application class which is meant to be inherited by an app that uses the Corylium API
 	class Application
 	{
 	public:
