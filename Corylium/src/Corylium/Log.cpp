@@ -16,4 +16,3 @@ namespace Corylium {
 		sClientLogger->set_level(spdlog::level::trace);
 	}
 }
-
