@@ -95,6 +95,10 @@ project "Sandbox"
 			"CRLY_PLATFORM_WINDOWS",
 			"_SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING"
 		}
+		postbuildcommands
+		{
+			("{COPY} %{wks.location}bin/" .. outputdir .. "/Corylium/Corylium.dll %{wks.location}bin/" .. outputdir .. "/%{prj.name}")
+		}
 		
     filter "configurations:Debug"
 		defines "CRLY_DEBUG"
@@ -107,3 +111,4 @@ project "Sandbox"
 	filter "configurations:Dist"
 		defines "CRLY_DIST"
 		optimize "On"
+
