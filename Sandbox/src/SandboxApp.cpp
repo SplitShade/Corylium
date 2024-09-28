@@ -24,5 +24,4 @@ int main(int argc, char** argv) {
 	std::unique_ptr<Sandbox> app = std::make_unique<Sandbox>(APP_NAME);
 	Corylium::CreateApplication(*app);
 	Corylium::Log::Error("This is {}{}{} ({}) error", "t", "w", "o", 2);
-
 }
