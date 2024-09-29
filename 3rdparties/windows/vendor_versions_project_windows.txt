@@ -1,0 +1,5 @@
+Tool Name       	Version       		Source/URL
+---------------------------------------------------------------------------------------------
+premake        		v5.0.0-beta2        https://github.com/premake/premake-core/releases/download/v5.0.0-beta2/premake-5.0.0-beta2-windows.zip
+graphviz			12.1.1				https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/12.1.1/windows_10_cmake_Release_Graphviz-12.1.1-win64.zip
+doxygen		        1.12.0				https://github.com/doxygen/doxygen/releases/download/Release_1_12_0/doxygen-1.12.0.windows.x64.bin.zip
