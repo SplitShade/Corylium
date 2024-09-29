@@ -2,6 +2,10 @@
 .vs/
 bin/
 bin-int/
+docs/
+3rdparties/*/*/*
+!3rdparties/*/*/LICENSE.txt
+!3rdparties/*/*/LICENSE
 
 # Files
 *.user
