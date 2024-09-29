@@ -1,0 +1,74 @@
+# Doxyfile 1.9.3
+
+# This file describes the settings to be used by the documentation system
+# doxygen (www.doxygen.org) for a project.
+
+# Project related settings
+PROJECT_NAME           = "Corylium"
+PROJECT_BRIEF          = "Corylium Game Engine"
+PROJECT_LOGO           = ""
+OUTPUT_DIRECTORY       = "docs"
+CREATE_SUBDIRS         = NO
+ALLOW_UNICODE_NAMES    = NO
+
+# Input
+INPUT                  = README.md ./Corylium/src ./Sandbox/src
+FILE_PATTERNS          = *.cpp *.h *.hpp
+RECURSIVE              = YES
+EXCLUDE                =
+EXCLUDE_PATTERNS       =
+
+# Build related configuration
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+EXTRACT_LOCAL_METHODS  = YES
+EXTRACT_ANON_NSPACES   = NO
+
+# Documentation generation settings
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+
+GENERATE_LATEX         = NO
+LATEX_OUTPUT           = latex
+GENERATE_XML           = NO
+GENERATE_RTF           = NO
+GENERATE_MAN           = NO
+GENERATE_DOCBOOK       = NO
+
+# Additional options for more control
+INLINE_INHERITED_MEMB  = YES
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = 
+
+# Other settings
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+
+# Diagrams
+HAVE_DOT               = YES
+DOT_PATH               = ./3rdparties/windows/graphviz/bin
+DOT_NUM_THREADS        = 4
+CALL_GRAPH             = YES
+CALLER_GRAPH 		   = YES
+COLLABORATION_GRAPH    = YES
+DOT_CLEANUP            = NO
+DOT_IMAGE_FORMAT 	   = svg
+
+# Optimize output for C++ code
+OPTIMIZE_OUTPUT_FOR_C  = NO
+OPTIMIZE_OUTPUT_JAVA   = NO
+OPTIMIZE_FOR_FORTRAN   = NO
+OPTIMIZE_OUTPUT_VHDL   = NO
+OPTIMIZE_OUTPUT_SLICE  = NO
+
+# External tools and libraries
+MARKDOWN_SUPPORT       = YES
+AUTOLINK_SUPPORT       = YES
+
+USE_MDFILE_AS_MAINPAGE = README.md
+SEARCHENGINE 		   = YES
