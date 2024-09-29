@@ -1,4 +1,4 @@
-call Setup.py ../3rdparties\windows\vendor_versions_project_windows.txt
-pushd ..
-call 3rdparties\windows\premake\premake5.exe vs2022
-popd
+python -m pip install --upgrade pip
+python -m pip install requests --upgrade
+call python Setup.py ../3rdparties\windows\vendor_versions_project_windows.txt
+call GenerateProjectWindows.bat

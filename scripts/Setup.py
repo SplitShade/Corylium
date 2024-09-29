@@ -39,12 +39,9 @@ def extract_and_cleanup(file_path, dest_folder, tool_name):
 
             # Delete the zip file
             os.remove(file_path)
-            print(file_path);
             # Find the only folder in the destination directory
             extracted_items = os.listdir(dest_folder)
-            print(dest_folder);
             subfolders = [item for item in extracted_items if os.path.isdir(os.path.join(dest_folder, item))]
-            print(subfolders);
             if len(subfolders) == 1 and subfolders[0].lower().startswith(tool_name):
                 extracted_folder = os.path.join(dest_folder, subfolders[0])
 
