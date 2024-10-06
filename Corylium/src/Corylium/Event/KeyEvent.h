@@ -33,4 +33,16 @@ namespace Corylium {
 	private:
 		int _repeatCount;
 	};
+
+	class KeyReleasedEvent : public KeyEvent
+	{
+	public:
+		KeyReleasedEvent(int KeyCode)
+			: KeyEvent{ KeyCode }
+		{}
+
+		[[nodiscard]] virtual EventType GetEventType() const override { return EventType::KeyReleased; }
+
+	private:
+	};
 }
