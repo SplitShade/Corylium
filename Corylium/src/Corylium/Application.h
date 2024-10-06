@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Core.h"
+static constexpr std::string_view DEFAULT_APP_NAME = "CLIENT_APP";
 
 namespace Corylium {
 
@@ -15,11 +16,11 @@ namespace Corylium {
 
 		CORYLIUM_API void Run();
 
-		CORYLIUM_API std::string GetName() const { return _name; }
-
+		[[nodiscard]] CORYLIUM_API static std::string_view GetDefaultAppName() { return DEFAULT_APP_NAME; }
+		[[nodiscard]] CORYLIUM_API std::string GetName() const { return _name; }
 		
 	private:
-		std::string _name = "CLIENT_APP";
+		std::string _name = std::string(DEFAULT_APP_NAME);
 	};
 
 }

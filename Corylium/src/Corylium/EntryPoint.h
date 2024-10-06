@@ -10,5 +10,5 @@ namespace Corylium {
 	/// @return void
 	void CORYLIUM_API CreateApplication(Application& DerivedApplication);
 
-	void Initialize(Application& DerivedApplication);
+	void Init(Application& DerivedApplication);
 }

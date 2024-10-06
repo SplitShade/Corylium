@@ -14,7 +14,7 @@ namespace Corylium {
 		[[nodiscard]] static constexpr std::shared_ptr<spdlog::logger>& GetCoreLogger() { return sCoreLogger; }
 		[[nodiscard]] CORYLIUM_API static constexpr std::shared_ptr<spdlog::logger>& GetClientLogger() { return sClientLogger; }
 
-		static void Initialize(const std::string AppName);
+		static void Init(const std::string ClientLoggerName);
 
 		template<typename ...Args>
 		static void CoreError(spdlog::format_string_t<Args...> fmt, Args&& ...args);
@@ -36,8 +36,8 @@ namespace Corylium {
 		~Log() = delete;
 
 	private:
-		static std::shared_ptr<spdlog::logger> sCoreLogger;
-		static std::shared_ptr<spdlog::logger> sClientLogger;
+		static inline std::shared_ptr<spdlog::logger> sCoreLogger;
+		static inline std::shared_ptr<spdlog::logger> sClientLogger;
 	};
 
 }

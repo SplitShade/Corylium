@@ -5,16 +5,16 @@
 namespace Corylium {
 
 	void CreateApplication(Application& DerivedApplication) {
-		Initialize(DerivedApplication);
+		Init(DerivedApplication);
 	}
 
-	void Initialize(Application& DerivedApplication)
+	void Init(Application& DerivedApplication)
 	{
 		std::cout << "Entry Point from Engine!" << std::endl;
 		std::string appName = DerivedApplication.GetName();
-		Log::Initialize(appName);
+		Log::Init(appName);
 
-		if (appName == "APP")
+		if (appName == Corylium::Application::GetDefaultAppName())
 		{
 			Log::CoreInfo("No application name provided when initializing engine. Using default");
 		}
