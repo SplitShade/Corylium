@@ -12,9 +12,11 @@ namespace Corylium {
 			: _keyCode{ KeyCode }
 		{}
 
-		[[nodiscard]] int GetCategoryFlags() const final { return EventCategory::EventCategoryKeyboard | EventCategory::EventCategoryInput; }
-		[[nodiscard]] int GetKeyCode() const { return _keyCode; }
 		[[nodiscard]] virtual EventType GetEventType() const override = 0;
+		[[nodiscard]] virtual std::string_view GetName() const override = 0;
+		[[nodiscard]] int GetCategoryFlags() const final { return EventCategory::EventCategoryKeyboard | EventCategory::EventCategoryInput; }
+		
+		[[nodiscard]] int GetKeyCode() const { return _keyCode; }
 
 	private:
 		int _keyCode;
@@ -28,8 +30,9 @@ namespace Corylium {
 		{}
 
 		[[nodiscard]] virtual EventType GetEventType() const override { return EventType::KeyPressed; }
-		[[nodiscard]] int GetRepeatCount() const { return _repeatCount; }
+		[[nodiscard]] virtual std::string_view GetName() { return "KeyPressedEvent"; };
 
+		[[nodiscard]] int GetRepeatCount() const { return _repeatCount; }
 	private:
 		int _repeatCount;
 	};
@@ -42,7 +45,7 @@ namespace Corylium {
 		{}
 
 		[[nodiscard]] virtual EventType GetEventType() const override { return EventType::KeyReleased; }
+		[[nodiscard]] virtual std::string_view GetName() { return "KeyReleasedEvent"; };
 
-	private:
 	};
 }
