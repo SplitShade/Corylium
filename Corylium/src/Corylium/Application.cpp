@@ -7,7 +7,7 @@ namespace Corylium {
 	}
 
 	Application::Application(std::string_view Name)
-		:_name{Name}
+		: _name {Name}
 	{
 	}
 

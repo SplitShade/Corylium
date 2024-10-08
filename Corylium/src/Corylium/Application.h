@@ -17,10 +17,10 @@ namespace Corylium {
 		CORYLIUM_API void Run();
 
 		[[nodiscard]] CORYLIUM_API static std::string_view GetDefaultAppName() { return DEFAULT_APP_NAME; }
-		[[nodiscard]] CORYLIUM_API std::string GetName() const { return _name; }
+		[[nodiscard]] CORYLIUM_API std::string_view GetName() const { return _name; }
 		
 	private:
-		std::string _name = std::string(DEFAULT_APP_NAME);
+		const std::string_view _name = DEFAULT_APP_NAME;
 	};
 
 }

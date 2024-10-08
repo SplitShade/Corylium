@@ -11,7 +11,7 @@ namespace Corylium {
 	void Init(Application& DerivedApplication)
 	{
 		std::cout << "Entry Point from Engine!" << std::endl;
-		std::string appName = DerivedApplication.GetName();
+		std::string_view appName = DerivedApplication.GetName();
 		Log::Init(appName);
 
 		if (appName == Corylium::Application::GetDefaultAppName())
