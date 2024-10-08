@@ -6,15 +6,17 @@
 #include <string>
 #include "spdlog/logger.h"
 
+static constexpr std::string_view CRLY_LOGGER_DEFAULT_NAME = "CORYLIUM";
+
 namespace Corylium {
 
 	class Log
 	{
 	public:
-		[[nodiscard]] static constexpr std::shared_ptr<spdlog::logger>& GetCoreLogger() { return sCoreLogger; }
-		[[nodiscard]] CORYLIUM_API static constexpr std::shared_ptr<spdlog::logger>& GetClientLogger() { return sClientLogger; }
+		[[nodiscard]] static constexpr std::shared_ptr<spdlog::logger>& GetCoreLogger() { return _sCoreLogger; }
+		[[nodiscard]] CORYLIUM_API static constexpr std::shared_ptr<spdlog::logger>& GetClientLogger() { return _sClientLogger; }
 
-		static void Init(const std::string ClientLoggerName);
+		static void Init(const std::string_view ClientLoggerName);
 
 		template<typename ...Args>
 		static void CoreError(spdlog::format_string_t<Args...> fmt, Args&& ...args);
@@ -36,8 +38,9 @@ namespace Corylium {
 		~Log() = delete;
 
 	private:
-		static inline std::shared_ptr<spdlog::logger> sCoreLogger;
-		static inline std::shared_ptr<spdlog::logger> sClientLogger;
+		static inline std::shared_ptr<spdlog::logger> _sCoreLogger;
+		static inline std::shared_ptr<spdlog::logger> _sClientLogger;
+
 	};
 
 }

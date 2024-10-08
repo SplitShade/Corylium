@@ -4,13 +4,13 @@
 
 namespace Corylium {
 	
-	void Log::Init(const std::string ClientLoggerName)
+	void Log::Init(const std::string_view ClientLoggerName)
 	{
 		spdlog::set_pattern("%^[%T] %n: %v%$");
-		sCoreLogger = spdlog::stdout_color_mt("CORYLIUM");
-		sClientLogger = spdlog::stdout_color_mt(ClientLoggerName);
+		_sCoreLogger = spdlog::stdout_color_mt(std::string(CRLY_LOGGER_DEFAULT_NAME));
+		_sClientLogger = spdlog::stdout_color_mt(std::string(ClientLoggerName));
 
-		sCoreLogger->set_level(spdlog::level::trace);
-		sClientLogger->set_level(spdlog::level::trace);
+		_sCoreLogger->set_level(spdlog::level::trace);
+		_sClientLogger->set_level(spdlog::level::trace);
 	}
 }
