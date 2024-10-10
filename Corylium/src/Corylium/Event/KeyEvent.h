@@ -8,15 +8,16 @@ namespace Corylium {
 	class KeyEvent : public Event
 	{
 	public:
-		KeyEvent(int KeyCode)
-			: _keyCode{ KeyCode }
-		{}
-
 		[[nodiscard]] virtual EventType GetEventType() const override = 0;
 		[[nodiscard]] virtual std::string_view GetName() const override = 0;
 		[[nodiscard]] int GetCategoryFlags() const final { return EventCategory::EventCategoryKeyboard | EventCategory::EventCategoryInput; }
 		
 		[[nodiscard]] int GetKeyCode() const { return _keyCode; }
+
+	protected:
+		KeyEvent(int KeyCode)
+			: _keyCode{ KeyCode }
+		{}
 
 	private:
 		int _keyCode;
