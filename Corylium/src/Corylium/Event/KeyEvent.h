@@ -30,7 +30,7 @@ namespace Corylium {
 		{}
 
 		[[nodiscard]] virtual EventType GetEventType() const override { return EventType::KeyPressed; }
-		[[nodiscard]] virtual std::string_view GetName() { return "KeyPressedEvent"; };
+		[[nodiscard]] virtual std::string_view GetName() const override { return "KeyPressedEvent"; };
 
 		[[nodiscard]] int GetRepeatCount() const { return _repeatCount; }
 	private:
@@ -45,7 +45,7 @@ namespace Corylium {
 		{}
 
 		[[nodiscard]] virtual EventType GetEventType() const override { return EventType::KeyReleased; }
-		[[nodiscard]] virtual std::string_view GetName() { return "KeyReleasedEvent"; };
+		[[nodiscard]] virtual std::string_view GetName() const override { return "KeyReleasedEvent"; };
 
 	};
 }
