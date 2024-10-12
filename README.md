@@ -9,7 +9,9 @@ The project is currently only available on Windows devices. There are some prere
 
 `git clone --recursive https://github.com/SplitShade/Corylium`
 
-If you've already cloned the repo without using the recursive flag, you can add the submodules by running: `git submodule update --init`
+If you've already cloned the repo without using the recursive flag, you can add the submodules by running:
+
+`git submodule update --init`
 
 <ins>**2. Run the Setup script**</ins> in order to download binary dependencies, for Windows it is located in `scripts/SetupWindows.bat`
 
