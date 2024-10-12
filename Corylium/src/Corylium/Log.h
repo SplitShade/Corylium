@@ -25,6 +25,12 @@ namespace Corylium {
 		static void Error(spdlog::format_string_t<Args...> fmt, Args&& ...args);
 
 		template<typename ...Args>
+		static void CoreWarn(spdlog::format_string_t<Args...> fmt, Args&& ...args);
+
+		template<typename ...Args>
+		static void Warn(spdlog::format_string_t<Args...> fmt, Args&& ...args);
+
+		template<typename ...Args>
 		static void CoreInfo(spdlog::format_string_t<Args...> fmt, Args&& ...args);
 
 		template<typename ...Args>
