@@ -8,8 +8,6 @@ workspace "Corylium"
 		"Dist"
 	}
 	
-	includedirs { "Corylium/src" }
-	
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "Corylium"
@@ -28,6 +26,7 @@ project "Corylium"
 	
 	includedirs
 	{
+		"%{prj.name}/src",
 		"%{prj.name}/3rdparties/spdlog/include"
 	}
 
@@ -92,8 +91,7 @@ project "Sandbox"
 		
 		defines
 		{
-			"CRLY_PLATFORM_WINDOWS",
-			"_SILENCE_STDEXT_ARR_ITERS_DEPRECATION_WARNING"
+			"CRLY_PLATFORM_WINDOWS"
 		}
 		postbuildcommands
 		{
