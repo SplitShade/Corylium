@@ -1,9 +1,5 @@
 #pragma once
 
-#include <string>
-#include <functional>
-#include <optional>
-
 #ifdef CRLY_PLATFORM_WINDOWS
 	#ifdef CRLY_BUILD_DLL
 		#define CORYLIUM_API __declspec(dllexport)

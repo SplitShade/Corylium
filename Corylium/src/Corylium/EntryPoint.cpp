@@ -1,6 +1,6 @@
+#include "crlypch.h"
 #include "EntryPoint.h"
 #include "Log.h"
-#include <iostream>
 
 namespace Corylium {
 

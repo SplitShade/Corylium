@@ -17,6 +17,8 @@ project "Corylium"
 	
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+	pchheader "crlypch.h"
+	pchsource "%{prj.name}/src/crlypch.cpp"
 
     files
 	{
